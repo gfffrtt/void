@@ -1,0 +1,27 @@
+{
+  "name": "void-ts",
+  "type": "module",
+  "version": "1.0.19",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsup": "^8.3.5",
+    "vitest": "^2.1.6"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest",
+    "lint": "tsc --noEmit",
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts"
+}
